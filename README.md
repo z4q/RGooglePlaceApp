@@ -10,9 +10,17 @@ Redux, Redux Saga, Ant Design UI and other.
 
 # Run the project
 
-1. `Replace REACT_APP_MAP_API to correct google map API. in .env.development`
+1.  Open the `.env.development` file in your project's root directory.
 
-### `REACT_APP_MAP_API=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX`
+    Locate the line that contains `REACT_APP_MAP_API=`.
+    
+    Replace `REACT_APP_MAP_API` with your actual Google Maps API key. For example:
+    
+    `REACT_APP_MAP_API=YOUR_GOOGLE_MAPS_API_KEY`
+    
+    Replace `YOUR_GOOGLE_MAPS_API_KEY` with your valid Google Maps API key.
+    
+    Save the changes to the `.env.development` file.
 
 2. `yarn ` or `npm install` // for package installation
 3. `yarn start` or `npm run start` // to Runs the app in the development mode.
