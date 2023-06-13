@@ -8,14 +8,10 @@ import { GoogleOutlined } from "@ant-design/icons";
 
 const App: React.FC = () => {
   const { Content, Header } = Layout;
-
   const headerStyle: React.CSSProperties = {
     textAlign: "center",
-    color: "#fff",
-    height: 64,
-    paddingInline: 50,
-    lineHeight: "64px",
-    backgroundColor: "#7dbcea",
+    color: "#000000",
+    backgroundColor: "#fff",
   };
   return (
     <Provider store={store}>
