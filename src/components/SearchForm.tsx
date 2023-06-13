@@ -1,7 +1,7 @@
 import {
+  ClearOutlined,
   PushpinOutlined,
   HistoryOutlined,
-  ClearOutlined,
 } from "@ant-design/icons";
 import { RootState } from "../store";
 import React, { useRef, useState } from "react";
@@ -92,13 +92,17 @@ const SearchForm: React.FC<Props> = ({ history }) => {
         </Col>
       </Row>
       <div>
-        <FloatButton
-          type="default"
-          icon={<HistoryOutlined />}
-          onClick={showDrawer}
-          tooltip={<div>History</div>}
-          shape="square"
-        />
+        {history.length > 0 && (
+          <FloatButton
+            badge={{ dot: true }}
+            type="default"
+            icon={<HistoryOutlined />}
+            onClick={showDrawer}
+            tooltip={<div>History</div>}
+            shape="circle"
+          />
+        )}
+
         <Drawer
           title="History"
           placement="right"
