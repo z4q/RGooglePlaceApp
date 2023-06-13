@@ -22,5 +22,5 @@ Redux, Redux Saga, Ant Design UI and other.
     
     Save the changes to the `.env.development` file.
 
-2. `yarn ` or `npm install` // for package installation
+2. `yarn` or `npm install` // for package installation
 3. `yarn start` or `npm run start` // to Runs the app in the development mode.
