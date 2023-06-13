@@ -6,7 +6,7 @@ export const ActionTypes = {
   CLEAR_HISTORY: 'CLEAR_HISTORY',
 };
 
-export const selectSuggestion = (suggestion: Suggest) => ({
+export const selectSuggestion = (suggestion: Suggest | null) => ({
   type: ActionTypes.SELECT_SUGGESTION,
   payload: suggestion,
 });

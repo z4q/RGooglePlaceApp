@@ -16,9 +16,11 @@ const placeReducer = (state = initialState, action: any) => {
         selectedSuggestion: action.payload,
       };
     case ActionTypes.ADD_TO_HISTORY:
-      return {
+      console.log(action.payload);
+
+      return action.payload === null ? state : {
         ...state,
-        history: [...state.history, action.payload],
+        history: [action.payload, ...state.history],
       };
     case ActionTypes.CLEAR_HISTORY:
       return {

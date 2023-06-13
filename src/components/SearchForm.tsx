@@ -3,6 +3,7 @@ import {
   HistoryOutlined,
   ClearOutlined,
 } from "@ant-design/icons";
+import { RootState } from "../store";
 import React, { useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import Geosuggest, { Suggest } from "react-geosuggest";
@@ -35,6 +36,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
     if (geosuggestEl.current !== null) {
       geosuggestEl.current.clear();
       geosuggestEl.current.focus();
+      dispatch(selectSuggestion(null));
     }
   };
 
@@ -133,7 +135,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
     </div>
   );
 };
-const mapStateToProps = (state: any) => ({
+const mapStateToProps = (state: RootState) => ({
   selectedSuggestion: state.place.selectedSuggestion,
   history: state.place.history,
 });
