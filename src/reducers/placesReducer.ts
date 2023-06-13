@@ -24,6 +24,7 @@ const placeReducer = (state = initialState, action: any) => {
       return {
         ...state,
         history: [],
+        selectedSuggestion: null
       };
     default:
       return state;

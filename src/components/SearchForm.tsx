@@ -6,7 +6,7 @@ import {
 import React, { useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import Geosuggest, { Suggest } from "react-geosuggest";
-import { selectSuggestion } from "../actions/placesActions";
+import { selectSuggestion, clearHistory } from "../actions/placesActions";
 import { Button, Drawer, Col, Row, List, FloatButton, Space } from "antd";
 
 interface Props {
@@ -19,9 +19,14 @@ const SearchForm: React.FC<Props> = ({ history }) => {
   const showDrawer = () => {
     setOpen(true);
   };
-  const showDrawer2 = (id: number) => {
+  const reOpenPrevSelected = (id: number) => {
     dispatch(selectSuggestion(history[id]));
     setOpen(false);
+  };
+  const clearAllHistory = () => {
+    handlePlaceClear();
+    setOpen(false);
+    dispatch(clearHistory());
   };
   const onClose = () => {
     setOpen(false);
@@ -32,6 +37,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
       geosuggestEl.current.focus();
     }
   };
+
   return (
     <div>
       <br />
@@ -100,7 +106,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
             <Space>
               <Button
                 type="primary"
-                onClick={showDrawer}
+                onClick={clearAllHistory}
                 shape="round"
                 icon={<ClearOutlined />}
                 size={"middle"}
@@ -114,7 +120,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
             itemLayout="horizontal"
             dataSource={history}
             renderItem={(item, index) => (
-              <List.Item onClick={() => showDrawer2(index)}>
+              <List.Item onClick={() => reOpenPrevSelected(index)}>
                 <List.Item.Meta
                   description={item?.gmaps?.formatted_address}
                   title={item.label}
@@ -134,5 +140,6 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = {
   selectSuggestion,
+  clearHistory,
 };
 export default connect(mapStateToProps, mapDispatchToProps)(SearchForm);
