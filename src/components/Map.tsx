@@ -13,7 +13,7 @@ const Map: React.FC = (props: any) => {
   };
   const { isLoaded } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: API_KEY,
+    googleMapsApiKey: API_KEY ?? "",
   });
   const title = props?.selectedSuggestion?.description ?? "";
   const location = props?.selectedSuggestion?.location

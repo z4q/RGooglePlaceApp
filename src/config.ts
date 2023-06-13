@@ -1,1 +1,1 @@
-export const API_KEY = 'REPLACEKEY';
+export const API_KEY = process.env.REACT_APP_MAP_API;

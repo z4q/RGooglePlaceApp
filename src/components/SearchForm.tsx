@@ -29,6 +29,7 @@ const SearchForm: React.FC<Props> = ({ history }) => {
   const handlePlaceClear = () => {
     if (geosuggestEl.current !== null) {
       geosuggestEl.current.clear();
+      geosuggestEl.current.focus();
     }
   };
   return (
