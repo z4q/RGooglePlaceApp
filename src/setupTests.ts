@@ -6,10 +6,10 @@ import '@testing-library/jest-dom';
 import google from '../mock/google-maps-mock';
 // Mock the matchMedia function
 Object.defineProperty(window, 'matchMedia', {
-    value: () => ({
-      matches: false,
-      addListener: () => {},
-      removeListener: () => {},
-    }),
-  });
+  value: () => ({
+    matches: false,
+    addListener: () => { },
+    removeListener: () => { },
+  }),
+});
 //   jest.mock('google-maps-api', () => google);
