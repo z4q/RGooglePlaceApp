@@ -12,8 +12,6 @@ import { RootState } from "../store";
 import { connect } from "react-redux";
 import { Typography, Card, Space, Watermark } from "antd";
 
-import {} from "@react-google-maps/api";
-
 const Map: React.FC = (props: any) => {
   const { Title } = Typography;
   const containerStyle = {
